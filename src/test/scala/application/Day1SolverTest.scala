@@ -7,8 +7,8 @@ import org.scalatest.funsuite.AnyFunSuite
  * Test cases for [[Day1Solver]]
  */
 class Day1SolverTest extends AnyFunSuite:
-  test("solvePart1 returns Empty"):
-    assert(Day1Solver().solvePart1() === Option.empty)
+  test("solvePart1 returns result"):
+    assert(Day1Solver().solvePart1() === Some(1))
 
-  test("solvePart2 returns Empty"):
-    assert(Day1Solver().solvePart2() === Option.empty)
+  test("solvePart2 returns result"):
+    assert(Day1Solver().solvePart2() === Some(2))

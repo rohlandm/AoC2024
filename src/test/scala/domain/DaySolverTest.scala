@@ -8,7 +8,7 @@ import org.scalatest.funsuite.AnyFunSuite
  */
 class DaySolverTest extends AnyFunSuite:
   test("NotImplemented returns empty for solvePart1"):
-    assert(NotImplemented(1).solvePart1() === Option.empty)
+    assert(NotImplemented(1).solvePart1() === None)
   
   test("NotImplemented returns empty for solvePart2"):
-    assert(NotImplemented(1).solvePart2() === Option.empty)
+    assert(NotImplemented(1).solvePart2() === None)

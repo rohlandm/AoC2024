@@ -6,10 +6,10 @@ trait DaySolver:
   def day(): String
 
   def solvePart1(): Option[Long] =
-    Option.empty
+    None
 
   def solvePart2(): Option[Long] =
-    Option.empty
+    None
 
   final def print(): Unit =
     println(
