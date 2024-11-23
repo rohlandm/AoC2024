@@ -5,9 +5,8 @@ ThisBuild / scalaVersion := "3.5.2"
 lazy val root = (project in file("."))
   .settings(
     name := "AoC2024",
-    idePackagePrefix := Some("net.rohlandm.aoc24")
   )
 
-libraryDependencies ++=Seq(
+libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.2.19" % Test
 )

@@ -3,8 +3,6 @@ package net.rohlandm.aoc24
 import application.Day1Solver
 import domain.NotImplemented
 
-import scala.sys.exit
-
 
 @main
 def main(day: String): Unit =
@@ -13,8 +11,7 @@ def main(day: String): Unit =
   } catch
     case _ =>
       printUsageWithReason("Can't parse argument")
-      exit(1)
-
+      return
 
   dayNumber match
     case 1 => Day1Solver().print()
