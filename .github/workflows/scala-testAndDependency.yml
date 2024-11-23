@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   test:
-    uses: ./scala-test.yml
+    uses: ./scala-test.yml@v1
 
   updateDependencies:
     runs-on: ubuntu-latest
