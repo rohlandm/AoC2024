@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   test:
-    uses: .github/workflows/scala-test.yml@v1
+    uses: ./.github/workflows/scala-test.yml@v1
 
   updateDependencies:
     runs-on: ubuntu-latest
