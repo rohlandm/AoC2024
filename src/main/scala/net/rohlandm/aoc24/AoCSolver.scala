@@ -15,8 +15,8 @@ def main(day: String): Unit =
 
   dayNumber match
     case 1 => Day1Solver().print()
-    case x if x <= 25 => NotImplemented(x).print()
-    case x if x > 25 => printUsageWithReason("The Advent of Code has only 25 days")
+    case x if 1 to 25 contains x => NotImplemented(x).print()
+    case _ => printUsageWithReason("The Advent of Code has only days 1 to 25")
 
 def printUsageWithReason(reason: String): Unit =
   print(
