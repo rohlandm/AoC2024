@@ -6,7 +6,6 @@ import domain.NotImplemented
 import scala.sys.exit
 
 
-
 @main
 def main(day: String): Unit =
   val dayNumber = try {
@@ -24,8 +23,7 @@ def main(day: String): Unit =
 
 def printUsageWithReason(reason: String): Unit =
   print(
-    s"""
-       |$reason
+    s"""$reason
        |$usage
        |""".stripMargin)
 
