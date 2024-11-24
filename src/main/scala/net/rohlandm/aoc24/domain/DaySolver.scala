@@ -1,9 +1,7 @@
 package net.rohlandm.aoc24
 package domain
 
-trait DaySolver:
-
-  def day(): String
+trait DaySolver(day: Int):
 
   def solvePart1(): Option[Long] =
     None
@@ -13,7 +11,7 @@ trait DaySolver:
 
   final def print(): Unit =
     println(
-      s"""Solving Day ${day()}...
+      s"""Solving Day ${day}...
          |Part 1: ${
         solvePart1() match
           case Some(value) => value
@@ -27,6 +25,5 @@ trait DaySolver:
          |""".stripMargin)
 
 
-class NotImplemented(dayNumber: Int) extends DaySolver:
-  override def day(): String = dayNumber.toString
+class NotImplemented(day: Int) extends DaySolver(day)
 

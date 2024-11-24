@@ -6,9 +6,7 @@ import domain.NotImplemented
 
 @main
 def main(day: String): Unit =
-  val dayNumber = try {
-    day.toInt
-  } catch
+  val dayNumber = try day.toInt catch
     case _ =>
       printUsageWithReason("Can't parse argument")
       return
