@@ -46,3 +46,7 @@ build/
 ### Scala ###
 .bsp/
 **/.scala-build/**
+
+### inputs
+**/resources/input/*
+!**/resources/input/day0
