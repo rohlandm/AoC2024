@@ -3,22 +3,22 @@ package domain
 
 trait DaySolver(day: Int):
 
-  def solvePart1(): Option[Long] =
+  def solvePart1(input: List[String]): Option[Long] =
     None
 
-  def solvePart2(): Option[Long] =
+  def solvePart2(input: List[String]): Option[Long] =
     None
 
-  final def print(): Unit =
+  final def print(input: List[String]): Unit =
     println(
-      s"""Solving Day ${day}...
+      s"""Solving Day $day...
          |Part 1: ${
-        solvePart1() match
+        solvePart1(input) match
           case Some(value) => value
           case None => "Not implemented"
       }
          |Part 2: ${
-        solvePart2() match
+        solvePart2(input) match
           case Some(value) => value
           case None => "Not implemented"
       }

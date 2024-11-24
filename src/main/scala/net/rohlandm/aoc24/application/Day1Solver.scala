@@ -4,6 +4,6 @@ package application
 import domain.DaySolver
 
 class Day1Solver extends DaySolver(1):
-  override def solvePart1(): Option[Long] = Some(1)
+  override def solvePart1(input: List[String]): Option[Long] = Some(1)
 
-  override def solvePart2(): Option[Long] = Some(2)
+  override def solvePart2(input: List[String]): Option[Long] = Some(2)
