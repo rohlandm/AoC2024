@@ -1,10 +1,8 @@
 package net.rohlandm.aoc24
 
-import application.Day1Solver
-import domain.NotImplemented
 import net.rohlandm.aoc24.adapters.FileAndDownloadInputRepositoryImpl
-
-import java.io.File
+import net.rohlandm.aoc24.application.Day1Solver
+import net.rohlandm.aoc24.domain.NotImplemented
 
 
 @main
