@@ -2,6 +2,9 @@ package net.rohlandm.aoc24.application
 
 import org.scalatest.funsuite.AnyFunSuiteLike
 
+/**
+ * Test cases for [[Day2Solver]]
+ */
 class Day2SolverTest extends AnyFunSuiteLike:
 
   test("solvePart1 returns result"):
