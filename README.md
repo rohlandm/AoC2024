@@ -11,7 +11,7 @@ Advent of Code 2024 in Scala 3. Completion is not guaranteed and relies on my ti
 
 | Day | Implemented? |
 |-----|--------------|
-| 1   | ❌            |
+| 1   | ⭐️⭐️         |
 | 2   | ❌            |
 | 3   | ❌            |
 | 4   | ❌            |
