@@ -15,7 +15,7 @@ class Day1Solver extends DaySolver(1):
     val lookup = unzipped._2.groupMapReduce(identity)(_ => 1)((a, b) => a + b)
     Some(unzipped._1.fold(0)((a, b) => a + (b * lookup.getOrElse(b, 0))))
 
-  private val parse = (string: String) => string.split(" {3}").toList map (x => x.toInt) match
+  private val parse = (string: String) => string.split(" {3}").toList map (_.toInt) match
     case List(a, b) => (a, b)
     case _ => throw IllegalArgumentException()
       
