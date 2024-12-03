@@ -8,10 +8,10 @@ import org.scalatest.funsuite.AnyFunSuiteLike
 class Day3SolverTest extends AnyFunSuiteLike:
 
   private val testInput =
-    """""".stripMargin.split("\n").toList
+    """xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))""".stripMargin.split("\n").toList
 
   test("solvePart1 returns result"):
-    assert(Day3Solver().solvePart1(testInput) === None)
+    assert(Day3Solver().solvePart1(testInput) === Some(161))
 
   test("solvePart2 returns result"):
     assert(Day3Solver().solvePart2(testInput) === None)
