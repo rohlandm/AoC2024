@@ -1,6 +1,8 @@
 package net.rohlandm.aoc24
 package domain
 
+import java.time.Instant
+
 trait DaySolver(day: Int):
 
   def solvePart1(input: List[String]): Option[Long] =
@@ -10,6 +12,12 @@ trait DaySolver(day: Int):
     None
 
   final def print(input: List[String]): Unit =
+    
+    val start = Instant.now
+    val result1 = solvePart1(input)
+    val result2 = solvePart2(input)
+    val end = Instant.now
+    
     println(
       s"""🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄
          |🎅Solving Day $day...
@@ -24,6 +32,7 @@ trait DaySolver(day: Int):
           case None => "Not implemented"
       }
          |🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄
+         |Calculation time: ${end.toEpochMilli - start.toEpochMilli}ms
          |""".stripMargin)
 
 
