@@ -1,7 +1,7 @@
 package net.rohlandm.aoc24
 
 import net.rohlandm.aoc24.adapters.FileAndDownloadInputRepositoryImpl
-import net.rohlandm.aoc24.application.{Day1Solver, Day2Solver, Day3Solver}
+import net.rohlandm.aoc24.application.{Day1Solver, Day2Solver, Day3Solver, Day4Solver}
 import net.rohlandm.aoc24.domain.NotImplemented
 
 
@@ -16,6 +16,7 @@ def main(day: String): Unit =
     case 1 => Day1Solver().print(getInput(dayNumber))
     case 2 => Day2Solver().print(getInput(dayNumber))
     case 3 => Day3Solver().print(getInput(dayNumber))
+    case 4 => Day4Solver().print(getInput(dayNumber))
     case x if 1 to 25 contains x => NotImplemented(x).print(List.empty)
     case _ => printUsageWithReason("The Advent of Code has only days 1 to 25")
 
