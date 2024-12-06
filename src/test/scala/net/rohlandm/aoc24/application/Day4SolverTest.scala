@@ -7,11 +7,21 @@ import org.scalatest.funsuite.AnyFunSuiteLike
  */
 class Day4SolverTest extends AnyFunSuiteLike:
 
-  private val testInput = """""".stripMargin.split("\n").toList
-
+  private val testInput =
+    """MMMSXXMASM
+      |MSAMXMSMSA
+      |AMXSXMAAMM
+      |MSAMASMSMX
+      |XMASAMXAMM
+      |XXAMMXXAMA
+      |SMSMSASXSS
+      |SAXAMASAAA
+      |MAMMMXMMMM
+      |MXMXAXMASX""".stripMargin.split("\n").toList
+  
 
   test("solvePart1 returns result"):
-    assert(Day4Solver().solvePart1(testInput) === None)
+    assert(Day4Solver().solvePart1(testInput) === Some(18))
 
   test("solvePart2 returns result"):
-    assert(Day4Solver().solvePart2(testInput) === None)
+    assert(Day4Solver().solvePart2(testInput) === Some(9))

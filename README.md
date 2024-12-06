@@ -14,7 +14,7 @@ Advent of Code 2024 in Scala 3 (first time using Scala). Completion is not guara
 | 1   | ⭐️⭐️         |
 | 2   | ⭐️⭐️         |
 | 3   | ⭐️⭐️         |
-| 4   | ❌            |
+| 4   | ⭐️⭐️         |
 | 5   | ❌            |
 | 6   | ❌            |
 | 7   | ❌            |
