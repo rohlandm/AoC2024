@@ -24,4 +24,4 @@ class Day4SolverTest extends AnyFunSuiteLike:
     assert(Day4Solver().solvePart1(testInput) === Some(18))
 
   test("solvePart2 returns result"):
-    assert(Day4Solver().solvePart2(testInput) === None)
+    assert(Day4Solver().solvePart2(testInput) === Some(9))
