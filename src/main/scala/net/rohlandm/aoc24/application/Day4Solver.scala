@@ -41,6 +41,27 @@ class Day4Solver extends DaySolver(4):
       diagonalBackwardUpward +
       diagonalBackwardDownward)
 
+  override def solvePart2(input: List[String]): Option[Long] =
+    val paddedInput = padInput.apply(input)
+    Some(paddedInput.zipWithIndex.flatMap((string, idx) => {
+      for (c, charIdx) <- string.view.zipWithIndex yield
+        c match
+          case _ if c == 'A' && (
+            crossEval.apply(paddedInput, idx, charIdx, ('M', 'S', 'M', 'S')) ||
+              crossEval.apply(paddedInput, idx, charIdx, ('S', 'M', 'M', 'S')) ||
+              crossEval.apply(paddedInput, idx, charIdx, ('M', 'S', 'S', 'M')) ||
+              crossEval.apply(paddedInput, idx, charIdx, ('S', 'M', 'S', 'M'))
+            ) => 1
+          case _ => 0
+    }).sum)
+
+
+  private val crossEval = (paddedInput: List[String], idx: Int, charIdx: Int, targetChars: (Char, Char, Char, Char)) =>
+    paddedInput.apply(idx + 1).charAt(charIdx + 1) == targetChars._1 &&
+      paddedInput.apply(idx - 1).charAt(charIdx - 1) == targetChars._2 &&
+      paddedInput.apply(idx + 1).charAt(charIdx - 1) == targetChars._3 &&
+      paddedInput.apply(idx - 1).charAt(charIdx + 1) == targetChars._4
+
 
   private val padInput = (input: List[String]) =>
     val padLine = "#" * (input.head.length + 8)
