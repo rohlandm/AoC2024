@@ -56,4 +56,3 @@ class Day4Solver extends DaySolver(4):
       case x if x > 4 => string.substring(string.length - x + 4, string.length) + string.substring(0, string.length - x + 4)
       case x if x < -4 => string.substring(-x - 4) + string.substring(0, -x - 4)
       case _ => string
-    
