@@ -11,6 +11,25 @@ class Day5Solver extends DaySolver(5):
     val validMiddles = setup._2 filter (x => evaluateUpdate(x, setup._1, List.empty)) map (x => x.apply(x.length / 2))
     Some(validMiddles.sum)
 
+  override def solvePart2(input: List[String]): Option[Long] =
+    val setup = parse.apply(input)
+    val incorrect = setup._2 filterNot (evaluateUpdate(_, setup._1, List.empty))
+    val corrected = incorrect.map(correctUpdate(_, setup._1))
+    Some(corrected.map(x => x.apply(x.length / 2)).sum)
+
+  @tailrec
+  private def correctUpdate(update: List[Int], rules: List[PrintRule]): List[Int] =
+    var offendedRule: Option[PrintRule] = None
+    val offender = update.zipWithIndex.find((x, idx) => {
+      val relevantRules = rules.filter(_.after == x).filter(rule => update.slice(idx, update.length).contains(rule.before))
+      if relevantRules.nonEmpty then offendedRule = Some(relevantRules.head)
+      relevantRules.nonEmpty
+    }).map(_._1)
+    offendedRule match
+      case Some(value) => correctUpdate(update.updated(update.indexOf(value.before), value.after).updated(update.indexOf(value.after), value.before), rules)
+      case None => update
+
+
   @tailrec
   private def evaluateUpdate(update: List[Int], rules: List[PrintRule], before: List[Int]): Boolean =
     update match
