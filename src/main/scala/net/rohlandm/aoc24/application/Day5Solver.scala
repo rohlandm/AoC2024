@@ -9,14 +9,13 @@ class Day5Solver extends DaySolver(5):
   override def solvePart1(input: List[String]): Option[Long] =
     val setup = parse.apply(input)
     val validMiddles = setup._2 filter (x => evaluateUpdate(x, setup._1, List.empty)) map (x => x.apply(x.length / 2))
-    println(validMiddles)
     Some(validMiddles.sum)
 
   @tailrec
   private def evaluateUpdate(update: List[Int], rules: List[PrintRule], before: List[Int]): Boolean =
     update match
-      case x if update.size == 1 => rules.map(_.before).intersect(before).distinct.sorted == before.sorted
-      case x if !(rules.map(_.after).intersect(x.tail).distinct.sorted == x.tail.sorted) => false
+      case x if update.size == 1 => rules.filter(_.after == x.head).map(_.before).intersect(before).distinct.sorted == before.sorted
+      case x if !(rules.filter(_.before == x.head).map(_.after).intersect(x.tail).distinct.sorted == x.tail.sorted) => false
       case x => evaluateUpdate(x.tail, rules, before.appended(x.head))
 
   private val parse = (input: List[String]) => {
