@@ -24,5 +24,5 @@ class Day6SolverTest extends AnyFunSuite:
     assert(Day6Solver().solvePart1(testInput) === Some(41))
 
   test("solvePart2 returns result"):
-    assert(Day6Solver().solvePart2(testInput) === None)
+    assert(Day6Solver().solvePart2(testInput) === Some(6))
 

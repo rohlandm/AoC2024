@@ -12,8 +12,12 @@ class Day6Solver extends DaySolver(6):
     val simulated = simulate(guardMapping)
     Some(simulated.grid.flatten.map {
       case MapCoordinate.OBSTRUCTION => 0
-      case MapCoordinate.FREE(visited) => if visited then 1 else 0
+      case MapCoordinate.FREE(visited) => visited.map(direction => 1).getOrElse(0)
     }.sum)
+
+  override def solvePart2(input: List[String]): Option[Long] =
+    val simulated = simulate(parse(input))
+    Some(0)
 
   @tailrec
   private def simulate(guardMapping: GuardMapping): GuardMapping =
@@ -47,18 +51,18 @@ class Day6Solver extends DaySolver(6):
 
   private def visit(mapping: GuardMapping, x: Int, y: Int): List[List[MapCoordinate]] =
     mapping.grid.zipWithIndex.map((row, yIdx) => yIdx match
-      case idx if idx == y => row.updated(x, FREE(true))
+      case idx if idx == y => row.updated(x, FREE(Some(mapping.guard.direction)))
       case _ => row)
 
   private def parse(input: List[String]): GuardMapping =
     var guard: Option[Guard] = None
     val grid = input.map(_.toCharArray.toList).zipWithIndex.map((charList, yIdx) => charList.zipWithIndex.map((char, xIdx) => {
       char match
-        case '.' => FREE(false)
+        case '.' => FREE(None)
         case '#' => OBSTRUCTION
         case '^' =>
           guard = Some(Guard(xIdx, yIdx, UP))
-          FREE(false)
+          FREE(None)
     }))
     guard match
       case Some(value) => GuardMapping(grid, value)
