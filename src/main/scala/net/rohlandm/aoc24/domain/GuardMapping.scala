@@ -6,7 +6,7 @@ case class Guard(x: Int, y: Int, direction: Direction)
 
 enum MapCoordinate:
   case OBSTRUCTION
-  case FREE(visited: Option[Direction])
+  case FREE(visited: Set[Direction])
 
 enum Direction:
   case UP,DOWN,LEFT,RIGHT
