@@ -77,7 +77,7 @@ class Day6Solver extends DaySolver(6):
           loop = mapping.loop)).guard
         case _ => Guard(x + 1, y, RIGHT), mapping.loop)
 
-  private def visit(mapping: GuardMapping, x: Int, y: Int): List[List[MapCoordinate]] =
+  private def visit(mapping: GuardMapping, x: Int, y: Int): Vector[Vector[MapCoordinate]] =
     mapping.grid.zipWithIndex.map((row, yIdx) => yIdx match
       case idx if idx == y => row.updated(x, row.apply(x) match
         case MapCoordinate.FREE(visited) => FREE(Set.newBuilder.addAll(visited).addOne(mapping.guard.direction).result())
@@ -94,7 +94,7 @@ class Day6Solver extends DaySolver(6):
         case '^' =>
           guard = Some(Guard(xIdx, yIdx, UP))
           FREE(Set.empty)
-    }))
+    }).toVector).toVector
     guard match
       case Some(value) => GuardMapping(grid, value, false)
       case None => throw IllegalArgumentException("Input without guard")
