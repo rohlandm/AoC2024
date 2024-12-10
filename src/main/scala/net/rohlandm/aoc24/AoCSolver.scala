@@ -20,6 +20,7 @@ def main(day: String): Unit =
     case 5 => Day5Solver().print(getInput(dayNumber))
     case 6 => Day6Solver().print(getInput(dayNumber))
     case 7 => Day7Solver().print(getInput(dayNumber))
+    case 8 => Day8Solver().print(getInput(dayNumber))
     case x if 1 to 25 contains x => NotImplemented(x).print(List.empty)
     case _ => printUsageWithReason("The Advent of Code has only days 1 to 25")
 
