@@ -1,6 +1,6 @@
 package net.rohlandm.aoc24.domain
 
-case class GuardMapping(grid: List[List[MapCoordinate]], guard: Guard, loop: Boolean)
+case class GuardMapping(grid: Vector[Vector[MapCoordinate]], guard: Guard, loop: Boolean)
 
 case class Guard(x: Int, y: Int, direction: Direction)
 
